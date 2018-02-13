@@ -1,0 +1,62 @@
+/*
+ Atilze LoRa Development Kit
+ It consists of Atilze LoRa shield and sensors for IoT development. Below are the sensors:
+   * Soil moisture sensor 
+   * Light sensor 
+
+ Version   : 1.00
+ Original Author    : Khoo Boon Kien 
+ Editor: AmirK
+
+ History:
+   13-February-18
+ */
+#include <Fabrick.h>
+
+//****************************************
+// Initialisations
+//****************************************
+// Pins assignment
+// Default pins assignment located at Fabrick.h
+SoftwareSerial lora_serial(pinLoraRx, pinLoraTx);       // Software serial for LoRa module
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EDIT HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Device ID
+String device_id = "5b985fe0";   // EDIT: Your device ID 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~END~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Fabrick library
+Fabrick fabrick;      
+
+
+//****************************************
+// Setup
+//****************************************
+void setup() {
+  // Initialise serial for debugging
+  Serial.begin(9600);
+  Serial.println("***********************************************************************"); 
+  Serial.println("                  Fabrick LoRa Development Kit");
+  Serial.println("***********************************************************************");    
+  
+  // Setup LoRa DK
+  fabrick.lora_dk_begin( &lora_serial,&Serial);  
+
+
+}
+
+//****************************************
+// Main Loop
+//****************************************
+void loop() {
+  // Delay to let LoRa startup
+  delay(10000);
+
+  // Send moisture data
+  fabrick.lora_send_moisture(device_id);
+
+  // Send light data
+  fabrick.lora_send_light(device_id);
+  
+
+}
