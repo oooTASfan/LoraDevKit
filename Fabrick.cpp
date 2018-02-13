@@ -1,3 +1,16 @@
+/*
+ Atilze LoRa Development Kit
+ It consists of Atilze LoRa shield and sensors for IoT development. Below are the sensors:
+   * Soil moisture sensor 
+   * Light sensor 
+
+ Version   : 1.00
+ Original Author    : Khoo Boon Kien 
+ Editor: AmirK
+
+ History:
+   13-February-18
+ */
 #include "Fabrick.h"
 
 Fabrick::Fabrick()
