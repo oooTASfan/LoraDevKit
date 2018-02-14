@@ -22,7 +22,7 @@ SoftwareSerial lora_serial(pinLoraRx, pinLoraTx);       // Software serial for L
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EDIT HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Device ID
-String device_id = "5b985fe0";   // EDIT: Your device ID 
+String device_id = "XXXXXXXXX";   // EDIT: Your device ID 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~END~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Fabrick library
